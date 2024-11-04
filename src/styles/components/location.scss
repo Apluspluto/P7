@@ -1,0 +1,37 @@
+section {
+    .container_location {
+        display: grid; /* Utiliser la grille pour disposer les éléments */
+        background-color: #F6F6F6; /* Couleur de fond du conteneur */
+        border-radius: 30px; /* Coins arrondis pour le conteneur */
+        margin: 50px; /* Marge extérieure pour espacer le conteneur du reste du contenu */
+        padding: 30px;
+        justify-items: center; /* Centre les éléments à l'intérieur de chaque cellule de la grille */
+        grid-template-columns: repeat(3, 1fr); /* Crée une grille avec 3 colonnes */
+        gap: 50px; /* Espacement entre les éléments de la grille */
+
+        div {
+            background-color: #FF6060; /* Couleur de fond pour chaque carré */
+            width: 280px; /* Largeur fixe pour le carré */
+            height: 280px; /* Hauteur fixe pour le carré */
+            border-radius: 10px; /* Arrondir les coins si désiré */
+            padding: 10px; /* Espacement intérieur */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+            display: flex; /* Utiliser flexbox pour centrer le contenu interne */
+            flex-direction: column; /* Aligne l'image et le texte verticalement */
+            align-items: center; /* Centre le contenu horizontalement */
+            justify-content: center; /* Centre le contenu verticalement */
+        }
+
+        img {
+            width: 100%; /* Rendre l'image responsive à l'intérieur du carré */
+            height: auto; /* Garder les proportions de l'image */
+            border-radius: 5px; /* Arrondir les bords de l'image */
+        }
+
+        p {
+            color: white;
+            margin-top: 10px; /* Espacement entre l'image et le texte */
+            text-align: center; /* Centrer le texte */
+        }
+    }
+}

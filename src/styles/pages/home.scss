@@ -1,0 +1,26 @@
+.container_fond {
+    margin-top: 50px;
+    position: relative; /* Permet de positionner les éléments enfants */
+    text-align: center; /* Centrer le texte horizontalement */
+
+    img {
+        height: 300px;
+        width: 92%;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+        filter: brightness(0.5);
+    }
+    .home_titre {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+        /* Texte positionnement */
+        position: absolute; /* Permet de superposer le texte sur l'image */
+        top: 33%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Ajuste la position pour un vrai centrage */
+    }
+
+}
