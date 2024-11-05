@@ -1,4 +1,7 @@
-section {
+div {
+    a {
+        text-decoration: inherit;
+    }
     .container_location {
         display: grid; /* Utiliser la grille pour disposer les éléments */
         background-color: #F6F6F6; /* Couleur de fond du conteneur */
@@ -31,7 +34,7 @@ section {
         p {
             color: white;
             margin-top: 10px; /* Espacement entre l'image et le texte */
-            text-align: center; /* Centrer le texte */
+            text-align: left;
         }
     }
 }
