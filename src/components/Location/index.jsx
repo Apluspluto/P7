@@ -1,18 +1,20 @@
 import React from 'react';
-import data from '../../data/data.json'; 
-import '../../styles/components/location.scss'
+import '../../styles/components/location.scss';
+import { Link } from 'react-router-dom';
 
-function Location() { 
+function Location({ data }) {
   return (
     <div className='container_location'>
       {data.map(location => (
-        <div key={location.id}>
-          <img src={location.cover} alt={location.title} />
-          <p>{location.title}</p>
-        </div>
+        <Link key={location.id} to={`/Logement/${location.id}`}>
+          <div>
+            <img src={location.cover} alt={location.title} />
+            <p>{location.title}</p>
+          </div>
+        </Link>
       ))}
     </div>
   );
 }
 
-export default Location
+export default Location;
