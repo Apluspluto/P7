@@ -11,8 +11,8 @@ function Logement({ data }) {
 
   return (
     <div>
-      <h1>{location.title}</h1>
       <img src={location.cover} alt={location.title} />
+      <h1>{location.title}</h1>
       <p>{location.description}</p>
       {/* Ce ne sont pas du tout les éléments définitif, c'est pour voir si les éléments s'affiche bien */}
     </div>
