@@ -13,7 +13,6 @@ import '../src/styles/pages/index.scss'
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <main>
       <Header />
       <Routes>
         <Route path="/" element={<Home data={data} />} />
@@ -21,7 +20,6 @@ ReactDOM.render(
         <Route path='/Propos' element={<Propos/>} />
         <Route path="*" element={<Error />} />
       </Routes>
-      </main>
       <Footer />
     </Router>
   </React.StrictMode>,
