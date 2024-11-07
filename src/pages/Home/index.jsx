@@ -1,15 +1,17 @@
 import '../../styles/pages/home.scss'
-import fond from '../../assets/images/background.png'
 import Location from '../../components/Location';
+import Background from '../../components/Background';
+import fond from '../../assets/images/background.png'
 
 function Home({data}) {
   return ( 
     <section>
-    <div className='container_fond'>
-        <img src={fond} alt='background' className="home_fond"/>
-        <p className='home_titre'>Chez vous, partout et ailleurs.</p>
+    <Background image={fond} title="Chez vous, partout et ailleurs." className="home_fond"/>
+    <div className='container_location'>
+      {data.map(location => (
+    <Location key={location.id}  id={location.id} title={location.title} cover={location.cover} location={location.location} />
+      ))}
     </div>
-    <Location data={data} />
     </section>
   ) 
 }
