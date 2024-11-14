@@ -1,5 +1,5 @@
 import kasa from '../../assets/images/kasa.png';
-import '../../styles/components/footer.scss'
+import '../Footer/footer.scss'
 
 function Footer() {
     return (
