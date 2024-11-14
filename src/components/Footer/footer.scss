@@ -1,0 +1,14 @@
+footer {
+        background-color: black; 
+        text-align: center;
+        padding: 40px;
+  
+    img {
+            filter: brightness(0) invert(1); /* Rend l'image blanche */
+            height: 30px;
+    }
+    p {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+    }
+}
