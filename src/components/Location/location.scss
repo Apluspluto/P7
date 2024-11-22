@@ -1,57 +1,79 @@
 .container_location {
-    display: grid;
-    background-color: #f6f6f6;
-    border-radius: 30px;
-    margin: 50px ;
-    padding: 30px;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px; // Espacement entre les cartes
-  
-    .location-link {
-      text-decoration: none; // Enlève le soulignement des liens
-      color: inherit; // Conserve la couleur par défaut pour le texte
+  display: grid;
+  background-color: #f6f6f6;
+  border-radius: 30px;
+  margin: 50px;
+  padding: 30px;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; // Espacement entre les cartes
+
+  .location-link {
+    text-decoration: none; // Enlève le soulignement des liens
+    color: inherit; // Conserve la couleur par défaut pour le texte
+  }
+
+  .location-card {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .location-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // L'image couvre toute la carte
+      position: absolute;
+      top: 0;
+      left: 0;
     }
-  
-    .location-card {
-      position: relative;
-      width: 320px;
-      height: 320px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  
-      .location-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; // L'image couvre toute la carte
-        position: absolute;
-        top: 0;
-        left: 0;
+
+    .text-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; // Texte aligné à gauche
+      color: white;
+
+      .location-title {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: bold;
       }
-  
-      .text-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; // Texte aligné à gauche
-        color: white;
-  
-        .location-title {
-          margin: 0;
-          font-size: 1.2em;
-          font-weight: bold;
-        }
-  
-        .location-description {
-          margin: 5px 0 0;
-          font-size: 0.9em;
-        }
+
+      .location-description {
+        margin: 5px 0 0;
+        font-size: 0.9em;
       }
     }
   }
+}
+
+// Media query pour 1182px
+@media (max-width: 1182px) {
+  .container_location {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Media query pour 826px
+@media (max-width: 826px) {
+  .container_location {
+    grid-template-columns: 1fr; // Une seule colonne
+    background-color: transparent; // Suppression du fond gris
+    padding: 0; // Supprimer le padding autour des cartes
+  }
+
+  .location-card {
+    width: 100%; // Les cartes prennent toute la largeur
+    height: auto; // La hauteur s'ajuste automatiquement
+    margin: 0; // Suppression de toute marge externe
+  }
+}
