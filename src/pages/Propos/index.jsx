@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Collapse } from 'react-collapse';
 import fond from '../../assets/images/kalen-emsley.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../../styles/pages/propos.scss';
+import '../Propos/propos.scss';
 import Background from '../../components/Background';
 
 const Accordion = () => {
