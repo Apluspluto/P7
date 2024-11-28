@@ -66,13 +66,14 @@
 // Media query pour 826px
 @media (max-width: 826px) {
   .container_location {
+   // justify-items: unset; pour la session
     grid-template-columns: 1fr; // Une seule colonne
     background-color: transparent; // Suppression du fond gris
     padding: 0; // Supprimer le padding autour des cartes
   }
 
   .location-card {
-    width: 100%; // Les cartes prennent toute la largeur
+   // width: 500px !important; pour la session
     height: auto; // La hauteur s'ajuste automatiquement
     margin: 0; // Suppression de toute marge externe
   }
