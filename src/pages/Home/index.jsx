@@ -1,4 +1,4 @@
-import '../../styles/pages/home.scss'
+import '../Home/home.scss'
 import Location from '../../components/Location';
 import Background from '../../components/Background';
 import fond from '../../assets/images/background.png'
