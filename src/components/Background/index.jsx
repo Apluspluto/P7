@@ -1,4 +1,4 @@
-import '../../styles/pages/home.scss';
+import '../../pages/Home/home.scss';
 
 function Background({ image, title, className }) {
   return ( 
