@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from '../Error';
-import '../../styles/pages/logement.scss';
+import '../Logement/logement.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Logement({ data }) {
