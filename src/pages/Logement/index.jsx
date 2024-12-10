@@ -82,7 +82,7 @@ function Logement({ data }) {
             onClick={() => setDescriptionOpen(!isDescriptionOpen)}
           >
             Description
-            <i className={`fas ${isDescriptionOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+            <i className={`fas ${isDescriptionOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
           </button>
           {isDescriptionOpen && (
             <p className="logement__description">{location.description}</p>
@@ -96,7 +96,7 @@ function Logement({ data }) {
             onClick={() => setEquipmentsOpen(!isEquipmentsOpen)}
           >
             Équipements
-            <i className={`fas ${isEquipmentsOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+            <i className={`fas ${isEquipmentsOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
           </button>
           {isEquipmentsOpen && (
             <ul className="logement__equipments">
