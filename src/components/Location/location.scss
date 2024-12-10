@@ -66,15 +66,24 @@
 // Media query pour 826px
 @media (max-width: 826px) {
   .container_location {
-   // justify-items: unset; pour la session
-    grid-template-columns: 1fr; // Une seule colonne
-    background-color: transparent; // Suppression du fond gris
-    padding: 0; // Supprimer le padding autour des cartes
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            flex-direction: column;
+            background: none;
   }
 
-  .location-card {
-   // width: 500px !important; pour la session
-    height: auto; // La hauteur s'ajuste automatiquement
-    margin: 0; // Suppression de toute marge externe
+  .location-link {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container_location .location-card {
+    width: 100%;
   }
 }
