@@ -30,7 +30,7 @@ const Accordion = () => {
               onClick={() => handleToggle(index)}
             >
               {section.title}
-              <i className={`fa-solid ${activeIndex === index ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+              <i className={`fa-solid ${activeIndex === index ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
             </button>
             <Collapse isOpened={activeIndex === index}>
               <div className="accordion-content">
