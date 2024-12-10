@@ -12,6 +12,7 @@
         filter: brightness(0.5);
     }
     .home_titre {
+        white-space: nowrap;
         color: white;
         font-weight: 700;
         font-size: 40px;
@@ -21,5 +22,16 @@
         left: 50%; /* Centrer horizontalement */
         transform: translate(-50%, -50%); /* Ajuste la position pour un vrai centrage */
     }
+}
 
+@media (max-width: 823px) {
+    .container_fond {
+        .home_titre {
+            white-space: wrap;
+            font-size: 50px;
+            text-align: left;
+            top: 35%;
+            left: 38%;
+        }
+    }
 }
