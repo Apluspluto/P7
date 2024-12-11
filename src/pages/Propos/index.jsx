@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../Propos/propos.scss';
 import Background from '../../components/Background';
 
-const Accordion = () => {
+function Accordion() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleToggle = (index) => {
@@ -42,6 +42,6 @@ const Accordion = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Accordion;
