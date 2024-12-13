@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from '../Error';
-import '../Logement/logement.scss';
+import Carousel from '../../components/Carousel';  // Import du composant Carousel
+import './logement.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Logement({ data }) {
@@ -20,33 +21,10 @@ function Logement({ data }) {
     return <Error />;
   }
 
-  // Fonction pour passer à l'image suivante
-  const nextImage = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % location.pictures.length);
-  };
-
-  // Fonction pour revenir à l'image précédente
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (currentImageIndex - 1 + location.pictures.length) % location.pictures.length
-    );
-  };
-
   return (
     <div className="logement">
-      {/* Carrousel d'images */}
-      <div className="logement__carousel">
-      <img  src={location.pictures[currentImageIndex]} alt={`${location.title} - ${currentImageIndex + 1}`} className="logement__carousel-image" />
-        <button onClick={prevImage} className="logement__carousel-arrow left">
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <button onClick={nextImage} className="logement__carousel-arrow right">
-          <i className="fas fa-chevron-right"></i>
-        </button>
-        <div className="logement__carousel-counter">
-          {currentImageIndex + 1} / {location.pictures.length}
-        </div>
-      </div>
+      {/* Carrousel d'images avec le composant Carousel */}
+      <Carousel pictures={location.pictures} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
 
       {/* Informations principales */}
       <div className="logement__details">
@@ -77,10 +55,7 @@ function Logement({ data }) {
       <div className="logement__additional-info">
         {/* Section Description */}
         <div className="logement__section">
-          <button 
-            className="logement__button" 
-            onClick={() => setDescriptionOpen(!isDescriptionOpen)}
-          >
+          <button className="logement__button" onClick={() => setDescriptionOpen(!isDescriptionOpen)}>
             Description
             <i className={`fas ${isDescriptionOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
           </button>
@@ -91,10 +66,7 @@ function Logement({ data }) {
 
         {/* Section Équipements */}
         <div className="logement__section">
-          <button 
-            className="logement__button" 
-            onClick={() => setEquipmentsOpen(!isEquipmentsOpen)}
-          >
+          <button className="logement__button" onClick={() => setEquipmentsOpen(!isEquipmentsOpen)}>
             Équipements
             <i className={`fas ${isEquipmentsOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
           </button>
