@@ -1,239 +1,218 @@
 .logement {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  // Gère l'image principale et le carrousel
+  &__image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  // Détails principaux (titre, tags, hôte, etc.)
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6060;
+    margin-bottom: 5px; // Réduit l'espace sous le titre
+  }
+
+  &__location {
+    font-size: 16px;
+    color: black;
+    margin-top: 0; // Enlève l'espace au-dessus du texte de la localisation
+  }
+
+  &__tags {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__tag {
+    background-color: #ff6060;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  // Hôte et notation
+  &__host-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__host {
+    display: flex;
     align-items: center;
-    padding: 20px;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+  }
+
+  &__host-name {
+    max-width: 60px;
+    font-size: 14px;
+    color: #ff6060;
+  }
+
+  &__host-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
+    padding-top: 20px;
+
+    .logement__star {
+      font-size: 20px;
+      color: #e3e3e3;
+    }
+
+    .filled {
+      color: #ff6060;
+    }
+  }
+
+  &__additional-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  // Comportement du carrousel
+  &__carousel {
+    position: relative;
+    width: 100%; // Garder la largeur à 100%
     margin: 0 auto;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  
-    &__image-container {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-  
-    &__image {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      object-fit: cover;
-    }
-  
-    &__details {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    &__info {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    &__title {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ff6060;
-      margin-bottom: 5px;  // Réduit l'espace sous le titre
-    }
-  
-    &__location {
-      font-size: 16px;
-      color: black;
-      margin-top: 0; // Enlève l'espace au-dessus du texte de la localisation
-    }
-  
-    &__tags {
-      display: flex;
-      gap: 10px;
-    }
-  
-    &__tag {
-      background-color: #ff6060;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 12px;
-      font-size: 14px;
-    }
-  
-    &__host-rating {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-  
-    &__host {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      margin-top: 7px;
-    }
-  
-    &__host-name {
-      max-width: 60px;
-      font-size: 14px;
-      color: #ff6060;
-    }
-  
-    &__host-picture {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  
-    &__rating {
-      display: flex;
-      gap: 5px;
-      padding-top: 20px;
-  
-      .logement__star {
-        font-size: 20px;
-        color: #e3e3e3;
-      }
-  
-      .filled {
-        color: #ff6060;
-      }
-    }
-  
-    &__additional-info {
-      display: flex;
-      gap: 20px;
-      width: 100%;
-    }
-  
-    &__section {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    &__button {
-      background-color: #ff6060;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      padding: 10px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    &__carousel {
-      position: relative;
-      width: 100%;  // Garder la largeur à 100%
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 10px;
-      height: 500px;
-    }
-  
-    &__carousel-image {
-      width: 100%;
-      height: 100%;  // L'image occupe toute la hauteur du carrousel
-      border-radius: 10px;
-      object-fit: cover;
-    }
-  
-    &__carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: background-color 0.3s ease;
-  
+    overflow: hidden;
+    border-radius: 10px;
+    height: 500px;
+  }
+
+  &__carousel-image {
+    width: 100%;
+    height: 100%; // L'image occupe toute la hauteur du carrousel
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  &__carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+
+    background-color: transparent;
+
+    &:hover {
       background-color: transparent;
-  
-      &:hover {
-        background-color: transparent;
-      }
     }
-  
-    &__carousel-arrow.left {
-      left: 15px;
+  }
+
+  &__carousel-arrow.left {
+    left: 15px;
+  }
+
+  &__carousel-arrow.right {
+    right: 15px;
+  }
+
+  &__carousel-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  // Style spécifique pour les listes sans puces
+  &__equipments {
+    list-style: none; // Enlève les puces
+    padding: 0;  // Enlève le padding de la liste
+    margin: 0;   // Enlève la marge de la liste
+
+    li {
+      padding: 5px 0;  // Espacement entre chaque élément de la liste
     }
-  
-    &__carousel-arrow.right {
-      right: 15px;
+  }
+}
+
+@media (max-width: 660px) {
+  .logement {
+    &__details {
+      display: block;
+    }  
+    &__host-rating {
+      flex-direction: row-reverse;
+      justify-content: space-between;
     }
-  
-    &__carousel-counter {
-      position: absolute;
-      bottom: 10px;
-      right: 50%;
-      transform: translateX(50%);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 10px;
-      font-size: 14px;
-      text-align: center;
-    }
-  
-    &__description, &__equipments {
-      font-size: 14px;
-      color: #333;
-      background-color: #F6F6F6;
-      padding: 10px;
+    &__host {
+      margin-bottom: 0px;
       margin-top: 0px;
-      border: collapse;
     }
-  
-    &__equipments {
-      list-style: none;
-      padding: 10px;
-      li {
-        padding: 5px 0;
-      }
+    &__additional-info {
+      grid-template-columns: 1fr;
+    }
+    &__rating {
+      top: -10px;
+      position: relative;
     }
   }
+}
 
-  @media (max-width: 660px) {
-    .logement {
-      &__details {
-        display: block;
-      }  
-      &__host-rating {
-            flex-direction: row-reverse;
-            justify-content: space-between;
-      }
-      &__host {
-        margin-bottom: 0px;
-        margin-top: 0px;
-      }
-      &__additional-info {
-        flex-direction: column;
-      }
-      &__rating {
-        top: -10px;
-        position: relative;
-      }
+@media (max-width: 768px) {
+  .logement {
+    &__carousel-arrow {
+      font-size: 30px;
     }
   }
-
-  @media (max-width: 768px) {
-    .logement {
-      &__carousel-arrow {
-        font-size: 30px;
-    }
-    }
-  }
-  
+}
