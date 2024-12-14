@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from '../Error';
-import Carousel from '../../components/Carousel';  // Import du composant Carousel
+import Carousel from '../../components/Carousel'; // Import du composant Carousel
+import Collapse from '../../components/Collapse'; // Import du composant Collapse
 import './logement.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Logement({ data }) {
   const { id } = useParams();
 
-  // Déclare tous les hooks d'état en premier
-  const [isDescriptionOpen, setDescriptionOpen] = useState(false);
-  const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
+  // Déclare tous les hooks d'état
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Recherche de la location
@@ -24,7 +23,11 @@ function Logement({ data }) {
   return (
     <div className="logement">
       {/* Carrousel d'images avec le composant Carousel */}
-      <Carousel pictures={location.pictures} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
+      <Carousel
+        pictures={location.pictures}
+        currentImageIndex={currentImageIndex}
+        setCurrentImageIndex={setCurrentImageIndex}
+      />
 
       {/* Informations principales */}
       <div className="logement__details">
@@ -41,43 +44,40 @@ function Logement({ data }) {
         <div className="logement__host-rating">
           <div className="logement__host">
             <p className="logement__host-name">{location.host.name}</p>
-            <img src={location.host.picture} alt={location.host.name} className="logement__host-picture" />
+            <img
+              src={location.host.picture}
+              alt={location.host.name}
+              className="logement__host-picture"
+            />
           </div>
           <div className="logement__rating">
             {Array.from({ length: 5 }).map((_, index) => (
-              <span key={index} className={`logement__star ${index < location.rating ? 'filled' : ''}`}>★</span>
+              <span
+                key={index}
+                className={`logement__star ${index < location.rating ? 'filled' : ''}`}
+              >
+                ★
+              </span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Description et équipements */}
+      {/* Description et équipements avec le composant Collapse */}
       <div className="logement__additional-info">
         {/* Section Description */}
-        <div className="logement__section">
-          <button className="logement__button" onClick={() => setDescriptionOpen(!isDescriptionOpen)}>
-            Description
-            <i className={`fas ${isDescriptionOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
-          </button>
-          {isDescriptionOpen && (
-            <p className="logement__description">{location.description}</p>
-          )}
-        </div>
+        <Collapse title="Description">
+          <p className="logement__description">{location.description}</p>
+        </Collapse>
 
         {/* Section Équipements */}
-        <div className="logement__section">
-          <button className="logement__button" onClick={() => setEquipmentsOpen(!isEquipmentsOpen)}>
-            Équipements
-            <i className={`fas ${isEquipmentsOpen ? 'fa-chevron-down' : 'fa-chevron-up'}`}></i>
-          </button>
-          {isEquipmentsOpen && (
-            <ul className="logement__equipments">
-              {location.equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <Collapse title="Équipements">
+          <ul className="logement__equipments">
+            {location.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </Collapse>
       </div>
     </div>
   );
