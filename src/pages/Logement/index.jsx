@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from '../Error';
 import Carousel from '../../components/Carousel'; // Import du composant Carousel
@@ -8,9 +7,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Logement({ data }) {
   const { id } = useParams();
-
-  // Déclare tous les hooks d'état
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Recherche de la location
   const location = data.find(location => location.id === id);
@@ -23,11 +19,7 @@ function Logement({ data }) {
   return (
     <div className="logement">
       {/* Carrousel d'images avec le composant Carousel */}
-      <Carousel
-        pictures={location.pictures}
-        currentImageIndex={currentImageIndex}
-        setCurrentImageIndex={setCurrentImageIndex}
-      />
+      <Carousel pictures={location.pictures}/>
 
       {/* Informations principales */}
       <div className="logement__details">
